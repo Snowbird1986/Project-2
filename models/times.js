@@ -31,5 +31,12 @@ module.exports = function(sequelize, DataTypes) {
       defaultValue: 10
     }
   });
+  Times.associate = function(models) {
+    // Associating Author with Posts
+    // When an Author is deleted, also delete any associated Posts
+    Times.hasMany(models.User, {
+      onDelete: "cascade"
+    });
+  };
   return Times;
 };
