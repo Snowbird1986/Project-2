@@ -1,4 +1,5 @@
 var db = require("../models");
+const Op = db.Sequelize.Op
 
 module.exports = function(app) {
   // Load index page
@@ -11,7 +12,7 @@ module.exports = function(app) {
   });
 
   // Load example page and pass in an example by email
-  app.get("/user/:email", function(req, res) {
+  app.get("/user/reservation/:email", function(req, res) {
     db.User.findOne({ where: { email: req.params.email } }).then(function(
       dbUser
     ) {
@@ -21,7 +22,7 @@ module.exports = function(app) {
     });
   });
   // Load example page and pass in an example by email
-  app.get("/user/:TimeID", function(req, res) {
+  app.get("/user/timeslot/:TimeID", function(req, res) {
     db.User.findAll({ where: { TimeID: req.params.TimeID } }).then(function(
       dbUser
     ) {
