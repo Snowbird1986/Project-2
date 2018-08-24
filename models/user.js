@@ -53,17 +53,14 @@ module.exports = function(sequelize, DataTypes) {
   User.associate = function(models) {
     // Associating Author with Posts
     // When an Author is deleted, also delete any associated Posts
-    User.hasOne(models.Reserves, {
+    models.User.hasOne(models.Reserves, {
       onDelete: "cascade"
     });
-  };
-  User.associate = function(models) {
-    // We're saying that a Post should belong to an Author
-    // A Post can't be created without an Author due to the foreign key constraint
-    User.belongsTo(models.Times, {
+    models.User.belongsTo(models.Times, {
       foreignKey: {
         allowNull: false
       }
     });
+  };
   return User;
 };
