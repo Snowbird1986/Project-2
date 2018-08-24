@@ -3,19 +3,44 @@ var db = require("../models");
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
+    db.Times.findAll({}).then(function(dbTimes) {
       res.render("index", {
-        msg: "Welcome!",
-        examples: dbExamples
+        times: dbTimes
       });
     });
   });
 
-  // Load example page and pass in an example by id
-  app.get("/example/:id", function(req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.render("example", {
-        example: dbExample
+  // Load example page and pass in an example by email
+  app.get("/user/:email", function(req, res) {
+    db.User.findOne({ where: { email: req.params.email } }).then(function(
+      dbUser
+    ) {
+      res.render("reservation", {
+        user: dbUser
+      });
+    });
+  });
+  // Load example page and pass in an example by email
+  app.get("/user/:TimeID", function(req, res) {
+    db.User.findAll({ where: { TimeID: req.params.TimeID } }).then(function(
+      dbUser
+    ) {
+      res.render("timeslot", {
+        user: dbUser
+      });
+    });
+  });
+  app.get("/times/:beginDate", function(req, res) {
+    db.Times.findAll({ where: { 
+      beginDate: req.params.beginDate, 
+      availableSpaces: {
+        [Op.gt]:0
+        }
+   } }).then(function(
+      dbTimes
+    ) {
+      res.render("submission", {
+        times: dbTimes
       });
     });
   });
