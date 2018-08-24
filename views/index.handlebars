@@ -1,15 +1,59 @@
 <div id="home">
   <div class="container">
     <div class="row">
-      <div class="col-8 offset-2">
-        <h2>Road to Bethlehem Scheduler!</h2>
-        <form class="clearfix mb-4">
+      <div class="col-12">
+        <section id="services" class="section">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-4 col-sm-6">
+                <div class="item-boxes wow fadeInDown" data-wow-delay="0.2s">
+                  <div class="icon">
+                    <i class="lnr lnr-pencil"></i>
+                  </div>
+                  <h4>Create a Reservation</h4>
+                  <p>Click here to create your own reservation to the Red Bridge Baptist Road to Bethleham.</p>
+                  <select class="form-control form-control-lg" id="reserve-text" aria-describedby="reserve-date" placeholder="Choose a date for reservation">
+                    {{#each times}}
+                    <option data-date="{{this.dataValues.beginDate}}">{{this.dataValues.beginDate}}+" : "+{{this.dataValues.startTime}}</option>
+                    {{/each}}
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-6">
+                <div class="item-boxes wow fadeInDown" data-wow-delay="0.4s">
+                  <div class="icon">
+                    <i class="lnr lnr-cog"></i>
+                  </div>
+                  <h4>Reservation Look-up</h4>
+                  <p>Enter your email to look up an existing reservation.</p>
+                  <br>
+                  <input type="text" id="email-text" class="form-control" aria-describedby="email-text" placeholder="Enter Email">
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-6">
+                <div class="item-boxes wow fadeInDown" data-wow-delay="0.6s">
+                  <div class="icon">
+                    <i class="lnr lnr-chart-bars"></i>
+                  </div>
+                  <h4>Administration Area</h4>
+                  <p>Admin Look-up of existing reservations.</p>
+                  <br>
+                  <select class="form-control form-control-lg" id="reserve-text" aria-describedby="reserve-date" placeholder="Choose a date for reservation">
+                    {{#each times}}
+                    <option data-TimeID="{{this.dataValues.id}}">{{this.dataValues.beginDate}}+" : "+{{this.dataValues.startTime}}</option>
+                    {{/each}}
+                  </select>
+                </div>
+              </div>
+            </div>
+        </section>
+        {{!-- <form class="clearfix mb-4">
           <div class="form-group">
             <label for="reserve-date">Create Reservation</label>
             <select class="form-control form-control-lg" id="reserve-text" aria-describedby="reserve-date" placeholder="Choose a date for reservation">
-                {{#each times}}
-                  <option data-date="{{this.dataValues.beginDate}}">{{this.dataValues.beginDate}}+" : "+{{this.dataValues.startTime}}</option>
-                {{/each}}
+              {{#each times}}
+              <option data-date="{{this.dataValues.beginDate}}">{{this.dataValues.beginDate}}+" : "+{{this.dataValues.startTime}}</option>
+              {{/each}}
             </select>
           </div>
           <button id="createSubmit" class="btn btn-primary float-right">Submit</button>
@@ -22,22 +66,24 @@
           </div>
           <button id="emailSubmit" class="btn btn-primary float-right">Submit</button>
         </form>
-        
+
         <form class="clearfix mb-4">
           <div class="form-group">
             <label for="example-text">Admin - Time Slot Search</label>
             <select class="form-control form-control-lg" id="reserve-text" aria-describedby="reserve-date" placeholder="Choose a date for reservation">
-                {{#each times}}
-                  <option data-TimeID="{{this.dataValues.id}}">{{this.dataValues.beginDate}}+" : "+{{this.dataValues.startTime}}</option>
-                {{/each}}
+              {{#each times}}
+              <option data-TimeID="{{this.dataValues.id}}">{{this.dataValues.beginDate}}+" : "+{{this.dataValues.startTime}}</option>
+              {{/each}}
             </select>
           </div>
           <button id="adminSubmit" class="btn btn-primary float-right">Submit</button>
         </form>
+          <button id="submit" class="btn btn-primary float-right">Submit</button>
+        </form> --}}
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="/js/index.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="/js/index.js"></script>
