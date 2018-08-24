@@ -1,0 +1,57 @@
+<section id="contact" class="section">
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col-md-9 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="0.3s">
+        <div class="contact-block">
+          <div class="section-header">
+            <h2 class="section-title wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Contact <span>Us</span></h2>
+            <hr class="lines wow zoomIn" data-wow-delay="0.3s">
+          </div>
+          <form id="contactForm">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="firstName" name="name" placeholder="First Name" required data-error="Please enter your first name">
+                  <div class="help-block with-errors"></div>
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" id="lastName" name="name" placeholder="LastName" required data-error="Please enter your last name">
+                  <div class="help-block with-errors"></div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="form-group">
+                  <input type="text" placeholder="Your Email" id="email" class="form-control" name="name" required data-error="Please enter your email">
+                  <div class="help-block with-errors"></div>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                  <input type="number" id="partySize" class="form-control" required data-error="Select Party Size">
+                  <div class="help-block with-errors"></div>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                  <input type="date" placeholder="Subject" id="date" class="form-control" required data-error="Select Date">
+                  <div class="help-block with-errors"></div>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                  <input type="time" "form-control" placeholder="timeSlot" rows="11" data-error="Select Timeslot" required data-error="Select Time">
+                  <div class="help-block with-errors"></div>
+                </div>
+                <div class="submit-button text-center">
+                  <button class="btn btn-common" id="submit" type="submit">Send Message</button>
+                  <div id="msgSubmit" class="h3 text-center hidden"></div>
+                  <div class="clearfix"></div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
