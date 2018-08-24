@@ -17,6 +17,7 @@
                     <option data-date="{{this.dataValues.beginDate}}">{{this.dataValues.beginDate}}+" : "+{{this.dataValues.startTime}}</option>
                     {{/each}}
                   </select>
+                  <button id="createSubmit" class="btn btn-primary">Submit</button>
                 </div>
               </div>
               <div class="col-md-4 col-sm-6">
@@ -28,6 +29,7 @@
                   <p>Enter your email to look up an existing reservation.</p>
                   <br>
                   <input type="text" id="email-text" class="form-control" aria-describedby="email-text" placeholder="Enter Email">
+                  <button id="emailSubmit" class="btn btn-primary">Submit</button>
                 </div>
               </div>
               <div class="col-md-4 col-sm-6">
@@ -43,6 +45,7 @@
                     <option data-TimeID="{{this.dataValues.id}}">{{this.dataValues.beginDate}}+" : "+{{this.dataValues.startTime}}</option>
                     {{/each}}
                   </select>
+                  <button id="adminSubmit" class="btn btn-primary">Submit</button>
                 </div>
               </div>
             </div>
