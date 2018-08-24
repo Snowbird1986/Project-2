@@ -40,9 +40,9 @@
                   <h4>Administration Area</h4>
                   <p>Admin Look-up of existing reservations.</p>
                   <br>
-                  <select class="form-control form-control-lg" id="reserve-text" aria-describedby="reserve-date" placeholder="Choose a date for reservation">
+                  <select class="form-control form-control-lg" id="time-text" aria-describedby="reserve-date" placeholder="Choose a date for reservation">
                     {{#each times}}
-                    <option data-TimeID="{{this.dataValues.id}}">{{this.dataValues.beginDate}}:{{this.dataValues.startTime}}</option>
+                    <option value="{{this.dataValues.id}}">{{this.dataValues.beginDate}}:{{this.dataValues.startTime}}</option>
                     {{/each}}
                   </select>
                   <button id="adminSubmit" class="btn btn-primary">Submit</button>

@@ -5,19 +5,20 @@ $(document).ready(function() {
 
   function createRes(event) {
     event.preventDefault();
-    beginDate = $(this).data("date");
+    console.log(event.target);
+    beginDate = $("#reserve-text").val();
     console.log(beginDate);
     $.get("/times/" + beginDate, function(data) {});
   }
   function emailSearch(event) {
     event.preventDefault();
-    email = $(this).text();
+    email = $("#email-text").val();
     console.log(email);
     $.get("/user/reservation/" + email, function(data) {});
   }
   function adminSearch(event) {
     event.preventDefault();
-    TimeID = $(this).data("TimeID");
+    TimeID = $("#time-text").val();
     console.log(TimeID);
     $.get("/user/timeslot/" + TimeID, function(data) {});
   }
