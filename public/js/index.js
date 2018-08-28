@@ -6,7 +6,7 @@ $(document).ready(function() {
   function createRes(event) {
     event.preventDefault();
     beginDate = $("#reserve-text").val();
-    window.location = "/times/" + beginDate;;
+    window.location = "/times/" + beginDate;
   }
 
   function emailSearch(event) {
