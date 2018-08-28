@@ -4,7 +4,7 @@
       <div class="col-md-9 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="0.3s">
         <div class="contact-block">
           <div class="section-header">
-            <h2 class="section-title wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Contact <span>Us</span></h2>
+            <h2 class="section-title wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Create <span>Reservation</span></h2>
             <hr class="lines wow zoomIn" data-wow-delay="0.3s">
           </div>
           <form id="contactForm">
@@ -15,7 +15,87 @@
                   <div class="help-block with-errors"></div>
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-control" id="lastName" name="name" placeholder="LastName" required data-error="Please enter your last name">
+                  <input type="text" class="form-control" id="lastName" name="name" placeholder="Last Name" required data-error="Please enter your last name">
+                  <div class="help-block with-errors"></div>
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" id="phoneNumber" name="name" placeholder="Phone Number" required data-error="Please enter your phone number">
+                  <div class="help-block with-errors"></div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input type="text" autocomplete="address-line1" class="form-control" id="address" name="name" placeholder="Address" required data-error="Please enter your address">
+                  <div class="help-block with-errors"></div>
+                </div>
+                <div class="row">
+                  <div class="col-md-8">
+                    <div class="form-group">
+                      <input type="text" autocomplete="address-level2" class="form-control" id="city" name="name" placeholder="City" required data-error="Please enter your city">
+                      <div class="help-block with-errors"></div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <select autocomplete="address-level1" class="form-control" id="state" name="name" required data-error="Please enter your state" style="height:55px">
+                        <option>  </option>
+                        <option>AL</option>
+                        <option>AK</option>
+                        <option>AR</option>
+                        <option>AZ</option>
+                        <option>CA</option>
+                        <option>CO</option>
+                        <option>CT</option>
+                        <option>DE</option>
+                        <option>FL</option>
+                        <option>GA</option>
+                        <option>HI</option>
+                        <option>IA</option>
+                        <option>ID</option>
+                        <option>IL</option>
+                        <option>IN</option>
+                        <option>KS</option>
+                        <option>KY</option>
+                        <option>LA</option>
+                        <option>MA</option>
+                        <option>ME</option>
+                        <option>MD</option>
+                        <option>MI</option>
+                        <option>MN</option>
+                        <option>MO</option>
+                        <option>MS</option>
+                        <option>MT</option>
+                        <option>NC</option>
+                        <option>ND</option>
+                        <option>NE</option>
+                        <option>NH</option>
+                        <option>NJ</option>
+                        <option>NM</option>
+                        <option>NV</option>
+                        <option>NY</option>
+                        <option>OH</option>
+                        <option>OK</option>
+                        <option>OR</option>
+                        <option>PA</option>
+                        <option>RI</option>
+                        <option>SC</option>
+                        <option>SD</option>
+                        <option>TN</option>
+                        <option>TX</option>
+                        <option>UT</option>
+                        <option>VA</option>
+                        <option>VT</option>
+                        <option>WA</option>
+                        <option>WI</option>
+                        <option>WV</option>
+                        <option>WY</option>
+                      </select>
+                      <div class="help-block with-errors"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <input type="text" autocomplete="postal-code" class="form-control" id="zip" name="name" placeholder="Zip Code" required data-error="Please enter your zip code">
                   <div class="help-block with-errors"></div>
                 </div>
               </div>
@@ -27,21 +107,21 @@
               </div>
               <div class="col-md-3">
                 <div class="form-group">
-                  <input type="number" id="partySize" class="form-control" required data-error="Select Party Size">
+                  <input type="number" placeholder="Party Size" id="partySize" class="form-control" required data-error="Select Party Size">
                   <div class="help-block with-errors"></div>
                 </div>
               </div>
-              <div class="col-md-3">
+              {{!-- <div class="col-md-3">
                 <div class="form-group">
                   <input type="date" placeholder="Subject" id="date" class="form-control" required data-error="Select Date">
                   <div class="help-block with-errors"></div>
                 </div>
-              </div>
-              <div class="col-md-3">
-                <div class="form-group">
+              </div> --}}
+              <div class="col-md-12">
+                {{!-- <div class="form-group">
                   <input type="time" "form-control" placeholder="timeSlot" rows="11" data-error="Select Timeslot" required data-error="Select Time">
                   <div class="help-block with-errors"></div>
-                </div>
+                </div> --}}
                 <div class="submit-button text-center">
                   <button class="btn btn-common" id="submit" type="submit">Send Message</button>
                   <div id="msgSubmit" class="h3 text-center hidden"></div>
