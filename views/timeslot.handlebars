@@ -5,7 +5,7 @@
                 <i class="lnr lnr-rocket"></i>
             </div>
             <div class="pricing-details">
-                <h2>Timeslot: {{user.TimeID}}</h2>
+                <h2>Timeslot: {{user.dataValues.TimeId}}</h2>
                 <span></span>
                 <ul>
                     {{#unless user}}
@@ -13,10 +13,10 @@
                     {{/unless}}
                     {{#if user}}
                         {{#each user}}
-                            <li>Name: {{user.firstName}} {{user.lastName}}</li>
-                            <li>Email: {{user.email}}</li>
-                            <li>Phone Number: {{user.phoneNumber}}</li>
-                            <li>Party Size: {{user.groupSize}}</li>
+                            <li>Name: {{firstName}} {{lastName}}</li>
+                            <li><a href="/user/reservation/{{email}}">Email: {{email}}</a></li>
+                            <li>Phone Number: {{phoneNumber}}</li>
+                            <li>Party Size: {{groupSize}}</li>
                         {{/each}}
                     {{/if}}
                 </ul>
