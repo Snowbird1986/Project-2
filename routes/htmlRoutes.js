@@ -27,6 +27,7 @@ module.exports = function(app) {
     db.User.findAll({ where: { TimeID: req.params.TimeID } }).then(function(
       dbUser
     ) {
+      console.log(dbUser)
       res.render("timeslot", {
         user: dbUser
       });

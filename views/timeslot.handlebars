@@ -8,9 +8,17 @@
                 <h2>Your Reservation</h2>
                 <span></span>
                 <ul>
-                    <li>User Email:</li>
-                    <li>Date Selected:</li>
-                    <li>Time Slot Selected:</li>
+                    {{#unless user}}
+                        <li><a href="/">No reservations found.  Click here to start over.</a></li>
+                    {{/unless}}
+                    {{#if user}}
+                        {{#each user}}
+                            <li>Name: {{user.firstName}} {{user.lastName}}</li>
+                            <li>Email: {{user.email}}</li>
+                            <li>Phone Number: {{user.phoneNumber}}</li>
+                            <li>Party Size: {{user.groupSize}}</li>
+                        {{/each}}
+                    {{/if}}
                 </ul>
             </div>
         </div>
