@@ -24,19 +24,19 @@ module.exports = function(app) {
       zip: req.body.zip,
       groupSize: req.body.groupSize,
       preferedDate: req.body.preferedDate,
-      TimeID: req.body.TimeID
+      TimeId: req.body.TimeID
     }).then(function(dbUser) {
-      // We have access to the new todo as an argument inside of the callback function
-      res.json(dbUser);
-    });
-    db.Reserves.create({
-      resDate: req.body.resDate,
-      resTime: req.body.resTime,
-      groupsize: req.body.groupsize,
-      UserID: req.body.UserID
-    }).then(function(dbReserves) {
-      // We have access to the new todo as an argument inside of the callback function
-      res.json(dbReserves);
+      // console.log(dbUser.dataValues.id);
+      defaultUserID = dbUser.dataValues.id;
+      console.log(defaultUserID);
+      db.Reserves.create({
+        resDate: req.body.resDate,
+        resTime: req.body.resTime,
+        groupsize: req.body.groupsize,
+        UserId: defaultUserID
+      }).then(function(dbReserves) {
+        res.json(dbReserves);
+      });
     });
   });
   app.get("/newres/:id", function(req, res) {
