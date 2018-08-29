@@ -24,20 +24,28 @@ module.exports = function(app) {
       zip: req.body.zip,
       groupSize: req.body.groupSize,
       preferedDate: req.body.preferedDate,
-      TimeId: req.body.TimeID
+      TimeId: req.body.TimeId
     }).then(function(dbUser) {
-      // console.log(dbUser.dataValues.id);
       defaultUserID = dbUser.dataValues.id;
-      console.log(defaultUserID);
       db.Reserves.create({
         resDate: req.body.resDate,
         resTime: req.body.resTime,
-        groupsize: req.body.groupsize,
+        groupsize: req.body.groupSize,
         UserId: defaultUserID
       }).then(function(dbReserves) {
+        // We have access to the new todo as an argument inside of the callback function
         res.json(dbReserves);
       });
     });
+    // db.Reserves.create({
+    //   resDate: req.body.resDate,
+    //   resTime: req.body.resTime,
+    //   groupsize: req.body.groupSize,
+    //   UserId: req.body.UserID
+    // }).then(function(dbReserves) {
+    //   // We have access to the new todo as an argument inside of the callback function
+    //   res.json(dbReserves);
+    // });
   });
   app.get("/newres/:id", function(req, res) {
     db.Times.findOne({ where: { id: req.params.id } }).then(function(dbTimes) {

@@ -37,9 +37,10 @@ $(document).ready(function() {
         .trim(),
       preferedDate: searchDate,
       resDate: searchDate,
-      TimeID: $("#TimeID")
-        .val()
-        .trim(),
+      TimeId: 1,
+      //   $("#TimeID")
+      //     .val()
+      //     .trim(),
       resTime: $("#TimeID")
         .val()
         .trim()
