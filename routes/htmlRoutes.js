@@ -16,6 +16,7 @@ module.exports = function(app) {
     db.User.findOne({ where: { email: req.params.email } }).then(function(
       dbUser
     ) {
+      console.log(dbUser)
       res.render("reservation", {
         user: dbUser
       });

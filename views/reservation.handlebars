@@ -8,13 +8,20 @@
                 <h2>Your Reservation</h2>
                 <span></span>
                 <ul>
-                    <li>Name:</li>
-                    <li>Date:</li>
-                    <li>Time:</li>
-                    <li>Email Address:</li>
-                    <li>Home Address:</li>
-                    <li>Phone Number:</li>
-                    <li>Party Size:</li>
+                    {{#unless user}}
+                        <li><a href="/">No reservation found.  Click here to start over.</a></li>
+                    {{/unless}}
+                    {{#if user}}
+                        <li>Name: {{user.firstName}} {{user.lastName}}</li>
+                        <li>Date: {{user.preferedDate}}</li>
+                        <li>Time: {{user.TimeID}}</li>
+                        <li>Email Address: {{user.email}}</li>
+                        <li>Home Address: {{user.address}}</li>
+                        <li>              {{user.city}}, {{user.state}} {{user.zip}}</li>
+                        <li>Phone Number: {{user.phoneNumber}}</li>
+                        <li>Party Size: {{user.groupSize}}</li>
+                    {{/if}}
+
                 </ul>
             </div>
         </div>
