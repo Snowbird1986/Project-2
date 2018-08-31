@@ -5,8 +5,13 @@ body {
   color: #333;
   font-size: 14px;
   font-weight: 300;
-  background: #fff;
+  background: url("../images/backgroundimage.jpg");
   overflow-x: hidden;
+}
+.backgroundimage{
+  background-image: url("../images/r2bheader.png");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 p {
   font-size: 14px;
