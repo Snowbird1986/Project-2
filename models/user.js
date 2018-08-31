@@ -12,8 +12,8 @@ module.exports = function(sequelize, DataTypes) {
       len: [2, 20]
     },
     phoneNumber: {
-      type: DataTypes.INTEGER,
-      isNumeric: true,
+      type: DataTypes.STRING,
+      // isNumeric: true,
       len: [7, 10]
     },
     email: {

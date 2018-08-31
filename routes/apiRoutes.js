@@ -52,7 +52,16 @@ module.exports = function(app) {
       res.json(dbTimes);
     });
   });
-  app.put("/newres/:TimeID", function(req, res) {
+  app.get("/times2/:TimeId", function(req, res) {
+    db.Times.findAll({
+      where: {
+        id: req.params.TimeId
+      }
+    }).then(function(dbTimes) {
+      res.json(dbTimes);
+    });
+  });
+  app.put("/newres/:TimeId", function(req, res) {
     // Update takes in two arguments, an object describing the properties we want to update,
     // and another "where" object describing the todos we want to update
     db.Times.update(
@@ -61,7 +70,7 @@ module.exports = function(app) {
       },
       {
         where: {
-          id: req.params.TimeID
+          id: req.params.TimeId
         }
       }
     ).then(function(dbTimes) {

@@ -44,10 +44,36 @@ $(document).ready(function() {
         .val()
         .trim()
     };
-    $.post("/newres", newReservation).then(function(data) {
-      console.log(data);
-      //   alert("Adding reservation...");
-      window.location = "/";
+    $.get("/times2/" + $("#time-text")
+    .val()
+    .trim(),
+).then(function(data) {
+      console.log(data[0].availableSpaces);
+      console.log(newReservation.groupSize)
+      var updatedSpaces = {
+        availableSpaces: data[0].availableSpaces - newReservation.groupSize
+      };
+      $.ajax({
+        type: "PUT",
+        url:
+          "/newres/" +
+          $("#time-text")
+            .val()
+            .trim(),
+        data: updatedSpaces
+      }).then(function(data) {
+        console.log(data);
+        $.post("/newres", newReservation).then(function(data) {
+          console.log(data);
+            // alert("Adding reservation...");
+          window.location = "/";
+        });
+      });
     });
+    // $.post("/newres", newReservation).then(function(data) {
+    //   console.log(data);
+    //   //   alert("Adding reservation...");
+    //   window.location = "/";
+    // });
   }
 });
