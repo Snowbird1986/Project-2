@@ -1,5 +1,5 @@
 <section id="contact" class="section col-md-8 offset-md-2">
-  <div class="container">
+  <div class="container col-md-12">
     <div class="row justify-content-md-center">
       <div class="col-md-12 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="0.3s">
         <div class="contact-block">
@@ -114,7 +114,7 @@
                 </div>
                   <div class="col-md-6">
                     <select class="form-control form-control-lg" id="time-text" aria-describedby="reserve-date" placeholder="Choose a time for reservation">
-                      {{#each times}}
+                      {{#each times.begindate}}
                         <option value="{{this.dataValues.id}}">{{this.dataValues.startTime}} --- Seats Remaining: {{this.dataValues.availableSpaces}}</option>
                       {{/each}}
                     </select>
