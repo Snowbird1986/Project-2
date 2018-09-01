@@ -9,6 +9,13 @@ module.exports = function(app) {
   // });
 
   // Create a new example
+  app.get("/user/reservationcheck/:email", function(req, res) {
+    db.User.findOne({ where: { email: req.params.email } }).then(function(
+      dbUser
+    ) {
+      res.json(dbUser);
+    });
+  });
   app.post("/newres", function(req, res) {
     // create takes an argument of an object describing the item we want to insert
     // into our table. In this case we just we pass in an object with a text and

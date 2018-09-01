@@ -114,7 +114,7 @@
                 </div>
                   <div class="col-md-6">
                     <select class="form-control form-control-lg" id="time-text" aria-describedby="reserve-date" placeholder="Choose a time for reservation">
-                      {{#each times.begindate}}
+                      {{#each times}}
                         <option value="{{this.dataValues.id}}">{{this.dataValues.startTime}} --- Seats Remaining: {{this.dataValues.availableSpaces}}</option>
                       {{/each}}
                     </select>
