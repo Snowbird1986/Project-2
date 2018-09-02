@@ -1,2 +1,2 @@
-INSERT INTO tables (beginDate, startTime)
-VALUES ("2018-12-10","12:00"), ("2018-12-10","13:00"), ("2018-12-10","14:00")
+INSERT INTO schedulerdb.times (beginDate, startTime)
+VALUES ("2018-12-07","12:00"), ("2018-12-07","13:00"), ("2018-12-07","14:00") , ("2018-12-08","12:00"), ("2018-12-09","12:00")

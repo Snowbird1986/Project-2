@@ -13,9 +13,9 @@
                   <h4>Create a Reservation</h4>
                   <p>Click here to create your own reservation to the Red Bridge Baptist Road to Bethleham.</p>
                   <select class="form-control form-control-lg" id="reserve-text" aria-describedby="reserve-date" placeholder="Choose a date for reservation">
-                    {{#each times}}
+                    {{#iterate times}}
                     <option data-date="{{this.dataValues.beginDate}}">{{this.dataValues.beginDate}}</option>
-                    {{/each}}
+                    {{/iterate}}
                   </select>
                   <button id="createSubmit" class="btn btn-primary">Submit</button>
                 </div>
@@ -42,7 +42,7 @@
                   <br>
                   <select class="form-control form-control-lg" id="time-text" aria-describedby="reserve-date" placeholder="Choose a date for reservation">
                     {{#each times}}
-                    <option value="{{this.dataValues.id}}">{{this.dataValues.beginDate}}:{{this.dataValues.startTime}}</option>
+                    <option value="{{this.dataValues.id}}">{{this.dataValues.beginDate}} : {{this.dataValues.startTime}}</option>
                     {{/each}}
                   </select>
                   <button id="adminSubmit" class="btn btn-primary">Submit</button>

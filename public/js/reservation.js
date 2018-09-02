@@ -1,12 +1,15 @@
 $(document).ready(function() {
   var url = window.location.pathname;
   var searchDate = url.substring(url.indexOf("s/") + 2);
+  $("#date").text(searchDate);
   //   console.log(url)
   //   console.log(url.substring(url.indexOf("s/") + 2));
   $("#submit").on("click", makeRes);
+  console.log($("#time-text").attr("title"));
 
   function makeRes(event) {
     event.preventDefault();
+    console.log($("#time-text").attr("title"));
     var newReservation = {
       firstName: $("#firstName")
         .val()
@@ -36,6 +39,9 @@ $(document).ready(function() {
         .val()
         .trim(),
       preferedDate: searchDate,
+      preferedTime: $("#time-text")
+        .val()
+        .trim(),
       resDate: searchDate,
       TimeId: $("#time-text")
         .val()
@@ -61,6 +67,7 @@ $(document).ready(function() {
               .val()
               .trim()
         ).then(function(data) {
+          console.log(data);;
           console.log(data[0].availableSpaces);
           console.log(newReservation.groupSize);
           var updatedSpaces = {

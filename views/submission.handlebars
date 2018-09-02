@@ -4,7 +4,7 @@
       <div class="col-md-12 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="0.3s">
         <div class="contact-block">
           <div class="section-header">
-            <h2 class="section-title wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Create <span>Reservation</span></h2>
+            <h2 class="section-title wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Create <span>Reservation: </span><span id="date"></span></h2>
             <hr class="lines wow zoomIn" data-wow-delay="0.3s">
           </div>
           <form id="contactForm">
@@ -115,7 +115,7 @@
                   <div class="col-md-6">
                     <select class="form-control form-control-lg" id="time-text" aria-describedby="reserve-date" placeholder="Choose a time for reservation">
                       {{#each times}}
-                        <option value="{{this.dataValues.id}}">{{this.dataValues.startTime}} --- Seats Remaining: {{this.dataValues.availableSpaces}}</option>
+                        <option value="{{this.dataValues.id}}" title="{{this.dataValues.startTime}}">{{this.dataValues.startTime}} --- Seats Remaining: {{this.dataValues.availableSpaces}}</option>
                       {{/each}}
                     </select>
                   </div>

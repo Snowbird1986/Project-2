@@ -2,6 +2,12 @@ require("dotenv").config();
 var express = require("express");
 var bodyParser = require("body-parser");
 var exphbs = require("express-handlebars");
+var helpers = require("handlebars-helpers")();
+var hbsHelpers = exphbs.create({
+  helpers: helpers,
+  defaultLayout: "main",
+  extname: "handlebars"
+});
 
 var db = require("./models");
 
@@ -16,9 +22,11 @@ app.use(express.static("public"));
 // Handlebars
 app.engine(
   "handlebars",
-  exphbs({
-    defaultLayout: "main"
-  })
+  hbsHelpers.engine
+  // "handlebars",
+  // exphbs({
+  //   defaultLayout: "main"
+  // })
 );
 app.set("view engine", "handlebars");
 

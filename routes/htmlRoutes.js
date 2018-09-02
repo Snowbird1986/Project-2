@@ -4,7 +4,10 @@ const Op = db.Sequelize.Op
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-    db.Times.findAll({}).then(function(dbTimes) {
+    db.Times.findAll({
+      order: [["beginDate", "ASC"]],
+    }).then(function(dbTimes) {
+      // console.log(dbTimes)
       res.render("index", {
         times: dbTimes
       });
@@ -16,7 +19,7 @@ module.exports = function(app) {
     db.User.findOne({ where: { email: req.params.email } }).then(function(
       dbUser
     ) {
-      console.log(dbUser)
+      // console.log(dbUser)
       res.render("reservation", {
         user: dbUser
       });
@@ -38,10 +41,13 @@ module.exports = function(app) {
       beginDate: req.params.beginDate, 
       availableSpaces: {
         [Op.gt]:0
-        }
-   } }).then(function(
+        },
+        },
+      order: [["beginDate", "ASC"], ["startTime", "ASC"]], 
+    }).then(function(
       dbTimes
     ) {
+      console.log(dbTimes)
       res.render("submission", {
         times: dbTimes
       });

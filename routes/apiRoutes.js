@@ -31,6 +31,7 @@ module.exports = function(app) {
       zip: req.body.zip,
       groupSize: req.body.groupSize,
       preferedDate: req.body.preferedDate,
+      preferedTime: req.body.preferedTime,
       TimeId: req.body.TimeId
     }).then(function(dbUser) {
       defaultUserID = dbUser.dataValues.id;
