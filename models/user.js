@@ -45,9 +45,12 @@ module.exports = function(sequelize, DataTypes) {
     preferedDate: {
       type: DataTypes.DATEONLY,
       isDate: true,
-      isAfter: "2018-12-09",
-      isBefore: "2018-12-11",
+      isAfter: "2018-12-06",
+      isBefore: "2018-12-10",
       notNull: true
+    },
+    preferedTime: {
+      type: DataTypes.TIME
     }
   });
   User.associate = function(models) {

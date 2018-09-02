@@ -4,13 +4,13 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.DATEONLY,
       isDate: true,
       notNull: true,
-      defaultValue: "2018-12-10"
+      defaultValue: "2018-12-09"
     },
     endDate: {
       type: DataTypes.DATEONLY,
       isDate: true,
       notNull: true,
-      defaultValue: "2018-12-10"
+      defaultValue: "2018-12-09"
     },
     startTime: {
       type: DataTypes.TIME
