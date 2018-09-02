@@ -5,11 +5,21 @@ $(document).ready(function() {
   //   console.log(url)
   //   console.log(url.substring(url.indexOf("s/") + 2));
   $("#submit").on("click", makeRes);
-  console.log($("#time-text").attr("title"));
+  console.log(
+    $("#time-text")
+      .find(":selected")
+      .text()
+      .slice(0, 8)
+  );
 
   function makeRes(event) {
     event.preventDefault();
-    console.log($("#time-text").attr("title"));
+    console.log(
+      $("#time-text")
+        .find(":selected")
+        .text()
+        .slice(0, 8)
+    );
     var newReservation = {
       firstName: $("#firstName")
         .val()
@@ -40,8 +50,9 @@ $(document).ready(function() {
         .trim(),
       preferedDate: searchDate,
       preferedTime: $("#time-text")
-        .val()
-        .trim(),
+        .find(":selected")
+        .text()
+        .slice(0, 8),
       resDate: searchDate,
       TimeId: $("#time-text")
         .val()
@@ -67,7 +78,7 @@ $(document).ready(function() {
               .val()
               .trim()
         ).then(function(data) {
-          console.log(data);;
+          console.log(data);
           console.log(data[0].availableSpaces);
           console.log(newReservation.groupSize);
           var updatedSpaces = {
