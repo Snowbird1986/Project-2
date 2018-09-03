@@ -114,9 +114,14 @@
                 </div>
                   <div class="col-md-6">
                     <select class="form-control form-control-lg" id="time-text" aria-describedby="reserve-date" placeholder="Choose a time for reservation">
-                      {{#each times}}
-                        <option value="{{this.dataValues.id}}" title="{{this.dataValues.startTime}}">{{this.dataValues.startTime}} --- Seats Remaining: {{this.dataValues.availableSpaces}}</option>
-                      {{/each}}
+                      {{#unless times}}
+                        <option>No Time Slots Remaining.  Click home page below to start over.</option>
+                      {{/unless}}
+                      {{#if times}}
+                        {{#each times}}
+                          <option value="{{this.dataValues.id}}" title="{{this.dataValues.startTime}}">{{this.dataValues.startTime}} --- Seats Remaining: {{this.dataValues.availableSpaces}}</option>
+                        {{/each}}
+                      {{/if}}
                     </select>
                   </div>
                 </div>
