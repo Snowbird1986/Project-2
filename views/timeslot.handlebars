@@ -10,7 +10,7 @@
                 <i class="lnr lnr-rocket"></i>
             </div>
             <div class="pricing-details">
-                <h2>Timeslot: <hr>{{moment preferedDate format="LL"}}<hr>{{preferedTime}}<hr></h2>
+                <h2>Timeslot: <hr>{{moment preferedDate format="LL"}}<hr>{{moment (toInt preferedTime) add="hour" amount=(add (toInt preferedTime) 6) format="LT"}}<hr></h2>
                 <ul>
                     {{!-- {{#unless user}}
                         <li><a href="/">No reservations found.  Click here to start over.</a></li>
