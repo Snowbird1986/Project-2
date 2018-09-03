@@ -13,7 +13,7 @@
                     {{/unless}}
                     {{#if user}}
                         <li>Name: {{user.firstName}} {{user.lastName}}</li>
-                        <li>Date: {{user.preferedDate}}</li>
+                        <li>Date: {{moment user.preferedDate format="LL"}}</li>
                         <li>Time: {{user.preferedTime}}</li>
                         <li>Email: {{user.email}}</li>
                         <li>Address: {{user.address}}</li>
