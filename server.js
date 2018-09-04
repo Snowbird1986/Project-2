@@ -27,7 +27,7 @@ app.use(express.static("public"));
 
 // Handlebars
 app.engine(
-  "Handlebars",
+  "handlebars",
   hbsHelpers.engine
   // "handlebars",
   // exphbs({
