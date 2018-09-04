@@ -4,8 +4,12 @@
       <div class="col-md-12 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="0.3s">
         <div class="contact-block">
           <div class="section-header">
-            <h2 class="section-title wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Create <span>Reservation: </span><span id="date"></span></h2>
-            <hr class="lines wow zoomIn" data-wow-delay="0.3s">
+            {{#forEach times}}
+              {{#isFirst}}
+                <h2 class="section-title wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Create Reservation: <span id="date">{{moment beginDate format="LL"}}</span></h2>
+                <hr class="lines wow zoomIn" data-wow-delay="0.3s">
+              {{/isFirst}}
+            {{/forEach}}
           </div>
           <form id="contactForm">
             <div class="row">

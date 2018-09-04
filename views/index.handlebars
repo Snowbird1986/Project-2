@@ -13,9 +13,9 @@
                   <h4>Create a Reservation</h4>
                   <p>Click here to create your own reservation to the Red Bridge Baptist Road to Bethleham.</p>
                   <select class="form-control form-control-lg" id="reserve-text" aria-describedby="reserve-date" placeholder="Choose a date for reservation">
-                    {{#iterate times}}
+                    {{!-- {{#iterate times}}
                     <option data-date="{{this.dataValues.beginDate}}">{{this.dataValues.beginDate}}</option>
-                    {{/iterate}}
+                    {{/iterate}} --}}
                   </select>
                   <button id="createSubmit" class="btn btn-primary">Submit</button>
                 </div>
@@ -50,43 +50,27 @@
               </div>
             </div>
         </section>
-        {{!-- <form class="clearfix mb-4">
-          <div class="form-group">
-            <label for="reserve-date">Create Reservation</label>
-            <select class="form-control form-control-lg" id="reserve-text" aria-describedby="reserve-date" placeholder="Choose a date for reservation">
-              {{#each times}}
-              <option data-date="{{this.dataValues.beginDate}}">{{this.dataValues.beginDate}}+" : "+{{this.dataValues.startTime}}</option>
-              {{/each}}
-            </select>
-          </div>
-          <button id="createSubmit" class="btn btn-primary float-right">Submit</button>
-        </form>
-
-        <form class="clearfix mb-4">
-          <div class="form-group">
-            <label for="email-text">Look Up Reservation</label>
-            <input type="text" id="email-text" class="form-control" aria-describedby="email-text" placeholder="Enter Email">
-          </div>
-          <button id="emailSubmit" class="btn btn-primary float-right">Submit</button>
-        </form>
-
-        <form class="clearfix mb-4">
-          <div class="form-group">
-            <label for="example-text">Admin - Time Slot Search</label>
-            <select class="form-control form-control-lg" id="reserve-text" aria-describedby="reserve-date" placeholder="Choose a date for reservation">
-              {{#each times}}
-              <option data-TimeID="{{this.dataValues.id}}">{{this.dataValues.beginDate}}+" : "+{{this.dataValues.startTime}}</option>
-              {{/each}}
-            </select>
-          </div>
-          <button id="adminSubmit" class="btn btn-primary float-right">Submit</button>
-        </form>
-          <button id="submit" class="btn btn-primary float-right">Submit</button>
-        </form> --}}
         </div>
       </div>
     </div>
   </div>
 
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+    var dates = [];
+    var times = {{{json times}}};
+    {{!-- console.log(times); --}}
+    for (i = 0; i < times.length; i++) {
+      dates.push(times[i].beginDate);
+    }
+    {{!-- console.log(dates) --}}
+    function onlyUnique(value, index, self) { 
+    return self.indexOf(value) === index;
+    }
+    var uniquedates = dates.filter( onlyUnique );
+    {{!-- console.log(uniquedates) --}}
+    for(j=0;j<uniquedates.length; j++){
+    $("#reserve-text").append("<option data-date="+uniquedates[j]+">"+uniquedates[j]+"</option>");
+    }
+  </script>
   <script src="/js/index.js"></script>

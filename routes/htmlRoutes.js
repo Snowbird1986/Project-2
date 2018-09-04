@@ -6,10 +6,11 @@ module.exports = function(app) {
   app.get("/", function(req, res) {
     db.Times.findAll({
       order: [["beginDate", "ASC"]],
+      // group: ["beginDate"]
     }).then(function(dbTimes) {
       // console.log(dbTimes)
       res.render("index", {
-        times: dbTimes
+        times: dbTimes,
       });
     });
   });

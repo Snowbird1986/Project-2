@@ -11,6 +11,9 @@ var hbsHelpers = exphbs.create({
 var Handlebars = require("handlebars");
 var MomentHandler = require("handlebars.moment");
 MomentHandler.registerHelpers(Handlebars);
+Handlebars.registerHelper("json", function(content) {
+  return JSON.stringify(content);
+});
 
 var db = require("./models");
 

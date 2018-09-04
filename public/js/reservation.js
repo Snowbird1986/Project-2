@@ -1,7 +1,7 @@
 $(document).ready(function() {
   var url = window.location.pathname;
   var searchDate = url.substring(url.indexOf("s/") + 2);
-  $("#date").text(searchDate);
+  // $("#date").text(searchDate);
   //   console.log(url)
   //   console.log(url.substring(url.indexOf("s/") + 2));
   $("#submit").on("click", makeRes);
@@ -93,9 +93,9 @@ $(document).ready(function() {
                 .trim(),
             data: updatedSpaces
           }).then(function(data) {
-            console.log(data);
+            // console.log(data);
             $.post("/newres", newReservation).then(function(data) {
-              console.log(data);
+              // console.log(data);
               alert("Reservation Successful!!");
               window.location = "/";
             });
