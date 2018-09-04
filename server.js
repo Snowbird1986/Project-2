@@ -8,6 +8,12 @@ var hbsHelpers = exphbs.create({
   defaultLayout: "main",
   extname: "handlebars"
 });
+var Handlebars = require("handlebars");
+var MomentHandler = require("handlebars.moment");
+MomentHandler.registerHelpers(Handlebars);
+Handlebars.registerHelper("json", function(content) {
+  return JSON.stringify(content);
+});
 
 var db = require("./models");
 
@@ -21,14 +27,14 @@ app.use(express.static("public"));
 
 // Handlebars
 app.engine(
-  "handlebars",
+  "Handlebars",
   hbsHelpers.engine
   // "handlebars",
   // exphbs({
   //   defaultLayout: "main"
   // })
 );
-app.set("view engine", "handlebars");
+app.set("view engine", "Handlebars");
 
 // Routes
 require("./routes/apiRoutes")(app);

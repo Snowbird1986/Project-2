@@ -4,8 +4,12 @@
       <div class="col-md-12 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="0.3s">
         <div class="contact-block">
           <div class="section-header">
-            <h2 class="section-title wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Create <span>Reservation: </span><span id="date"></span></h2>
-            <hr class="lines wow zoomIn" data-wow-delay="0.3s">
+            {{#forEach times}}
+              {{#isFirst}}
+                <h2 class="section-title wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Create Reservation: <span id="date">{{moment beginDate format="LL"}}</span></h2>
+                <hr class="lines wow zoomIn" data-wow-delay="0.3s">
+              {{/isFirst}}
+            {{/forEach}}
           </div>
           <form id="contactForm">
             <div class="row">
@@ -114,9 +118,14 @@
                 </div>
                   <div class="col-md-6">
                     <select class="form-control form-control-lg" id="time-text" aria-describedby="reserve-date" placeholder="Choose a time for reservation">
-                      {{#each times}}
-                        <option value="{{this.dataValues.id}}" title="{{this.dataValues.startTime}}">{{this.dataValues.startTime}} --- Seats Remaining: {{this.dataValues.availableSpaces}}</option>
-                      {{/each}}
+                      {{#unless times}}
+                        <option>No Time Slots Remaining.  Click home page below to start over.</option>
+                      {{/unless}}
+                      {{#if times}}
+                        {{#each times}}
+                          <option value="{{this.dataValues.id}}" title="{{this.dataValues.startTime}}">{{this.dataValues.startTime}} --- Seats Remaining: {{this.dataValues.availableSpaces}}</option>
+                        {{/each}}
+                      {{/if}}
                     </select>
                   </div>
                 </div>
