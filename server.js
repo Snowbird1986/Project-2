@@ -34,7 +34,7 @@ app.engine(
   //   defaultLayout: "main"
   // })
 );
-app.set("view engine", "Handlebars");
+app.set("view engine", "handlebars");
 
 // Routes
 require("./routes/apiRoutes")(app);
