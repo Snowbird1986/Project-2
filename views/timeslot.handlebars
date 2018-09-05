@@ -8,7 +8,7 @@
                     <i class="lnr lnr-rocket"></i>
                 </div>
                 <div class="pricing-details">
-                    <h2>Timeslot: {{moment preferedDate format="LL"}} : {{moment (toInt preferedTime) format="LT"}}<hr></h2>
+                    <h2>Timeslot: {{moment preferedDate format="LL"}} : {{moment (toInt preferedTime) add="hour" amount=(add (toInt preferedTime) 0) format="LT"}}<hr></h2>
                 </div>
             </div>
         </div>
