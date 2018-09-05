@@ -14,7 +14,7 @@
                     {{#if user}}
                         <li>Name: {{user.firstName}} {{user.lastName}}</li>
                         <li>Date: {{moment user.preferedDate format="LL"}}</li>
-                        <li>Time: {{moment (toInt user.preferedTime) format="LT"}}</li>
+                        <li>Time: {{moment (toInt user.preferedTime) add="hour" amount=(add (toInt user.preferedTime) 6) format="LT"}}</li>
                         <li>Email: {{user.email}}</li>
                         <li>Address: {{user.address}}</li>
                         <li>{{user.city}}, {{user.state}} {{user.zip}}</li>
