@@ -70,7 +70,7 @@ $(document).ready(function() {
       console.log(data);
       if (data !== null) {
         alert("Only one reservation per email.");
-        window.location = "/";
+        // window.location = "/";
       } else {
         $.get(
           "/times2/" +
@@ -96,8 +96,9 @@ $(document).ready(function() {
             // console.log(data);
             $.post("/newres", newReservation).then(function(data) {
               // console.log(data);
-              alert("Reservation Successful!!");
-              window.location = "/";
+              // alert("Reservation Successful!!");
+              email = $("#email").val();
+              window.location = "/user/reservation/" + email;
             });
           });
         });
