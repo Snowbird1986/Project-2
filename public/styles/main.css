@@ -9,7 +9,7 @@ body {
   overflow-x: hidden;
 }
 #backgroundimage{
-  background-image: url("../images/r2bheader.png");
+  background-image: url("../images/thumbnail.jpg");
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -1022,6 +1022,11 @@ footer {
   padding: 60px 0px 30px;
   text-align: center;
 }
+/* #footer{
+  left:0;
+  bottom: 0;
+  position: fixed;
+} */
 .site-info p {
   line-height: 34px;
   color: #fff;
