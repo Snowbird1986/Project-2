@@ -9,9 +9,9 @@ body {
   overflow-x: hidden;
 }
 #backgroundimage{
-  background-image: url("../images/thumbnail.jpg");
+  background-image: url("../images/r2bheader2.png");
   background-size: cover;
-  background-repeat: no-repeat;
+  /* background-repeat: no-repeat; */
 }
 p {
   font-size: 14px;
